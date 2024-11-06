@@ -1,0 +1,67 @@
+/* berita.css */
+
+/* Namespace untuk Berita Section */
+#berita-section .berita-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* Background transparan */
+    color: white; /* Warna teks putih */
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#berita-section .berita-card {
+    position: relative;
+    overflow: hidden;
+}
+
+#berita-section .berita-card:hover .berita-card-overlay {
+    opacity: 1;
+}
+
+#berita-section .berita-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tambahan Gaya untuk Tombol "Tambah Berita" */
+#berita-section .btn-add-news {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+#berita-section .btn-add-news:hover {
+    background-color: #404040;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    #berita-section .card-title {
+        font-size: 1.1rem;
+    }
+
+    #berita-section .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #berita-section .card-title {
+        font-size: 1rem;
+    }
+
+    #berita-section .card-text {
+        font-size: 0.8rem;
+    }
+}
