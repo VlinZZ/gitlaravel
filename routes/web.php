@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('navbar');
-});
+Route::get(uri:'/', action: [LandingController::class, 'index'])->name('index');
+Route::get(uri:'/navbar', action: [LandingController::class, 'navbar'])->name('navbar');
+Route::get(uri:'/berita', action: [LandingController::class, 'navbar'])->name('berita.index');

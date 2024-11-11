@@ -20,13 +20,13 @@
     <title>@yield('title')</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
 
     <!-- Berita CSS -->
-    <link rel="stylesheet" href="../css/berita.css">
+    <link rel="stylesheet" href="{{ asset ('css/berita.css') }}">
 
     <!-- About CSS -->
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="{{ asset ('css/about.css') }}">
 </head>
 
 
@@ -39,7 +39,7 @@
             <div class="card p-4">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="assets/kelompok.jpg" class="img-fluid" alt="Kelompok" width="500">
+                        <img src="{{ asset('img/yy.jpg') }}" class="img-fluid" alt="Kelompok" width="500">
                     </div>
                     <div class="col-md-6">
                         <h2 class="mb-3">Hai, Selamat Datang di Website</h2>
