@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\aboutcontrol;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/about/valin', [aboutcontrol::class, 'valin'])->name('about.valin');
+Route::get('/about/rell', [aboutcontrol::class, 'rell'])->name('about.rell');
+Route::get('/about/fiq', [aboutcontrol::class, 'fiq'])->name('about.fiq');
+
+
