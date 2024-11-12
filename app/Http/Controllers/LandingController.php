@@ -11,17 +11,7 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('index');
-    }
-
-    public function about()
-    {
-        return view('about');
-    }
-
-    public function Berita()
-    {
-        return view('berita');
+        return view('landing');
     }
 
     /**
