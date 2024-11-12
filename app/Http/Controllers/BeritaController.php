@@ -25,4 +25,9 @@ class BeritaController extends Controller
     {
         return view('berita.blo');
     }
+
+    public function  Tambah_Berita()
+    {
+        return view('berita.Tambah_Berita');
+    }
 }

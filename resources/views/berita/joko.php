@@ -13,7 +13,7 @@
 <body>
 
     <div class="container mt-5">
-        <a href="../../index.php" class="fa fa-arrow-left" aria-hidden="true"> Back</a>
+        <a href="../" class="fa fa-arrow-left" aria-hidden="true"> Back</a>
 
         <!-- Gambar Berita -->
         <div class="article-header text-center">
@@ -24,13 +24,13 @@
         <div class="article-content">
             <h1 class="mb-4"><strong>Viral Jokowi Tidak Salami Mantan Wapres Try Sutrisno, Istana Beri Klarifikasi</strong></h1>
             <p>
-                JAKARTA — Istana Kepresidenan membantah bahwa Presiden Joko Widodo (Jokowi) tidak menyalami mantan Wakil Presiden Try Sutrisno para acara HUT TNI ke-79 yang diselenggarakan pekan lalu, Sabtu (5/10/2024). 
+                JAKARTA — Istana Kepresidenan membantah bahwa Presiden Joko Widodo (Jokowi) tidak menyalami mantan Wakil Presiden Try Sutrisno para acara HUT TNI ke-79 yang diselenggarakan pekan lalu, Sabtu (5/10/2024).
             </p>
             <p>
-                Deputi Bidang Protokol, Pers dan Media Sekretariat Presiden Yusuf Permana menyebut bahwa Jokowi sudah menyalami Try saat keduanya berada di Holding VVIP Room. 
+                Deputi Bidang Protokol, Pers dan Media Sekretariat Presiden Yusuf Permana menyebut bahwa Jokowi sudah menyalami Try saat keduanya berada di Holding VVIP Room.
             </p>
             <p>
-                "Iya Bapak Presiden sudah salaman dan menyapa Wakil Presiden ke-6 Bapak Try Sutrisno beserta Ibu di Holding VVIP Room," katanya kepada wartawan saat dimintai konfirmasi, Senin (7/10/2024). 
+                "Iya Bapak Presiden sudah salaman dan menyapa Wakil Presiden ke-6 Bapak Try Sutrisno beserta Ibu di Holding VVIP Room," katanya kepada wartawan saat dimintai konfirmasi, Senin (7/10/2024).
             </p>
             <p>
                 Yusuf menyebut alasan Jokowi menyalami sejumlah tamu kehormatan lainnya karena mereka belum sempat bertemu di Holding Room.
@@ -39,10 +39,10 @@
                 Saat itu, Kepala Negara hanya menyalami mantan Wakil Presiden Jusuf Kalla, mantan Wakil Presiden Boediono serta istri dari mantan Presiden Abdurrahman Wahid atau Gus Dur, Shinta Nuriyah Wahid.
             </p>
             <p>
-                "Bapak Presiden [Jokowi] sangat menghormati semua elemen masyarakat apalagi dengan para tokoh pemimpin bangsa," kata Yusuf. 
+                "Bapak Presiden [Jokowi] sangat menghormati semua elemen masyarakat apalagi dengan para tokoh pemimpin bangsa," kata Yusuf.
             </p>
             <p>
-                Santer kabar Presiden Jokowi tampak melewati Try Sutrisno saat menyalami sejumlah tamu kehormatan yang duduk di panggung pada acara HUT TNI ke-79 akhir pekan lalu. 
+                Santer kabar Presiden Jokowi tampak melewati Try Sutrisno saat menyalami sejumlah tamu kehormatan yang duduk di panggung pada acara HUT TNI ke-79 akhir pekan lalu.
             </p>
             <p>
                 Untuk diketahui, Try adalah mantan wakil presiden yang mendampingi Presiden Soeharto selama 1993 sampai dengan 1998. Latar belakang Try adalah militer, di mana dia pernah menjabat Panglima Angkatan Bersenjata Republik Indonesia atau ABRI (sekarang TNI) dan Kepala Staf Angkatan Darat.

@@ -13,7 +13,7 @@
 <body>
 
     <div class="container mt-5">
-        <a href="../../index.php" class="fa fa-arrow-left back-btn" aria-hidden="true"> Back</a>
+        <a href="../" class="fa fa-arrow-left back-btn" aria-hidden="true"> Back</a>
 
         <!-- Gambar Berita -->
         <div class="article-header text-center">

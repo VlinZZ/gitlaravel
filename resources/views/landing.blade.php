@@ -62,7 +62,7 @@
 
 <div class="card p-4">
     <div class="d-flex justify-content-end mb-3">
-        <a href="pages/Tambah_Berita.html" class="btn-add-news">Tambah Berita</a>
+        <a href="{{ route('berita.Tambah_Berita') }}" class="btn-add-news">Tambah Berita</a>
     </div>
     <div class="row">
         <!-- Berita 1 -->

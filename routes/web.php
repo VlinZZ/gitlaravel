@@ -22,7 +22,9 @@ Route::get('/about/valin', [aboutcontrol::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [aboutcontrol::class, 'rell'])->name('about.rell');
 Route::get('/about/fiq', [aboutcontrol::class, 'fiq'])->name('about.fiq');
 
+Route::get('berita/Tambah_Berita', [BeritaController::class, 'Tambah_Berita'])->name('berita.Tambah_Berita');
 Route::get('berita/joko', [BeritaController::class, 'joko'])->name('berita.joko');
 Route::get('berita/pbwo', [BeritaController::class, 'pbwo'])->name('berita.pbwo');
 Route::get('berita/bla', [BeritaController::class, 'bla'])->name('berita.bla');
 Route::get('berita/blo', [BeritaController::class, 'blo'])->name('berita.blo');
+

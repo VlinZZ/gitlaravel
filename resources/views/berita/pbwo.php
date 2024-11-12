@@ -13,7 +13,7 @@
 <body>
 
     <div class="container mt-5">
-        <a href="../../index.php" class="fa fa-arrow-left" aria-hidden="true"> Back</a>
+        <a href="../" class="fa fa-arrow-left" aria-hidden="true"> Back</a>
 
         <!-- Gambar Berita -->
         <div class="article-header text-center">
@@ -30,7 +30,7 @@
                 Dalam catatan Bisnis, PDIP menggugat Komisi Pemilihan Umum (KPU) lantaran meloloskan Gibran Rakabuming sebagai cawapres mendampingi Prabowo Subianto. Gugatan tersebut dilayangkan PDIP ke KPU pada 2 April 2024 dengan nomor perkara 133/G/TF/2024/PTUN.JKT.
             </p>
             <p>
-                KPU menggunakan putusan Mahkamah Konstitusi (MK) soal batas usia pendaftaran capres/cawapres 2024 sehingga putra sulung Presiden Joko Widodo (Jokowi) tersebut bisa ikut kontestasi Pilpres 2024. 
+                KPU menggunakan putusan Mahkamah Konstitusi (MK) soal batas usia pendaftaran capres/cawapres 2024 sehingga putra sulung Presiden Joko Widodo (Jokowi) tersebut bisa ikut kontestasi Pilpres 2024.
             </p>
             <p>
                 Namun, Majelis Kehormatan Mahkamah Konstitusi (MKMK) memvonis adanya pelanggaran etik yang dilakukan oleh eks Ketua MK Anwar Usman dalam putusan tersebut.
