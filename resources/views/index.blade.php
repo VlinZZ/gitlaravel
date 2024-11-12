@@ -34,7 +34,7 @@
     <!-- Navigasi Menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="assets/logo.png" alt="Logo" width="70" height="50">
             </a>
 

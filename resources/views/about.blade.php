@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <h3 class="card-title">Revalino Jihadil Lopa</h3>
                     <p class="card-text">Informasi tentang Saya</p>
-                    <a href="about/valin.php" class="btn btn-about">Lihat</a>
+                    <a href="about/valinnnn.php" class="btn btn-about">Lihat</a>
                 </div>
             </div>
 
