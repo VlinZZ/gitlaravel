@@ -1,0 +1,51 @@
+body {
+    background-color: #f8f9fa;
+}
+.goblok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.uwu {
+    text-align: left;
+}
+.anjay {
+    text-align: left;
+}
+
+form {
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: grid;
+}
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+input[type="submit"] {
+    width: 92%;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    margin: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #404040;
+}
