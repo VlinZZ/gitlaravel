@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+}
+header {
+    background: rgba(255,255,225, 0.5);
+}
+
+img { border-radius: 12px;}
+table {
+    width: 100%;
+    margin: 20px;
+    border-collapse: collapse;
+    border-radius:20px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+.table-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.responsive-button {
+    padding: 8px 30px;
+    width: 24%;
+    font-size: 1em;
+    border-radius: 12px;
+}
+@media (max-width: 768px) {
+    .responsive-button {
+        width: 50%;
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 480px) {
+    .responsive-button {
+        width: 70%;
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+}
+.responsive-button:hover { background-color: #A0A0A0; }
