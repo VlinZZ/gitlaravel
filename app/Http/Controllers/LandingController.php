@@ -11,7 +11,12 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('navbar');
+        return view('index');
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 
     public function Berita()
