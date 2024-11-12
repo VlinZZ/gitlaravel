@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\aboutcontrol;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get(uri:'/', action: [LandingController::class, 'index'])->name('index');
+Route::get(uri:'navbar', action: [LandingController::class, 'navbar'])->name('navbar');
+
+Route::get('/about/valin', [aboutcontrol::class, 'valin'])->name('about.valin');
+Route::get('/about/rell', [aboutcontrol::class, 'rell'])->name('about.rell');
+Route::get('/about/fiq', [aboutcontrol::class, 'fiq'])->name('about.fiq');
