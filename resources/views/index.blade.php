@@ -39,7 +39,7 @@
             <div class="card p-4">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{ asset('img/yy.jpg') }}" class="img-fluid" alt="Kelompok" width="500">
+                        <img src="assets/kelompok.jpg" class="img-fluid" alt="Kelompok" width="500">
                     </div>
                     <div class="col-md-6">
                         <h2 class="mb-3">Hai, Selamat Datang di Website</h2>
