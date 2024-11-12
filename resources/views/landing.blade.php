@@ -67,7 +67,7 @@
     <div class="row">
         <!-- Berita 1 -->
         <div class="col-md-6 mb-4">
-            <a href="pages/isi berita/joko.html" class="text-decoration-none">
+            <a href="{{ route('berita.joko') }}" class="text-decoration-none">
                 <div class="card berita-card">
                     <img src="assets/joko.jpeg" class="card-img-top" alt="Foto Berita 1">
                     <div class="berita-card-overlay">
@@ -79,7 +79,7 @@
         </div>
         <!-- Berita 2 -->
         <div class="col-md-6 mb-4">
-            <a href="pages/isi berita/pbwo.html" class="text-decoration-none">
+            <a href="{{ route('berita.pbwo') }}" class="text-decoration-none">
                 <div class="card berita-card">
                     <img src="assets/pbwo.jpeg" class="card-img-top" alt="Foto Berita 2">
                     <div class="berita-card-overlay">
@@ -91,7 +91,7 @@
         </div>
         <!-- Berita 3 -->
         <div class="col-md-6 mb-4">
-            <a href="pages/isi berita/bla.html" class="text-decoration-none">
+            <a href="{{ route('berita.bla') }}" class="text-decoration-none">
                 <div class="card berita-card">
                     <img src="assets/bla.jpeg" class="card-img-top" alt="Foto Berita 3">
                     <div class="berita-card-overlay">
@@ -103,7 +103,7 @@
         </div>
         <!-- Berita 4 -->
         <div class="col-md-6 mb-4">
-            <a href="pages/isi berita/blo.html" class="text-decoration-none">
+            <a href="{{ route('berita.blo') }}" class="text-decoration-none">
                 <div class="card berita-card">
                     <img src="assets/blo.jpeg" class="card-img-top" alt="Foto Berita 4">
                     <div class="berita-card-overlay">
