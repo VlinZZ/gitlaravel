@@ -21,7 +21,7 @@
                     <a class="nav-link m-2" href="#berita-section">Berita</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn m-2 bg-black fw-medium text-light" href="pages/login.html"
+                    <a class="btn m-2 bg-black fw-medium text-light" href="{{ route('loginreg.login') }}"
                         style="width: auto; padding-left: 30px; padding-right: 30px;">Login</a>
                 </li>
             </ul>

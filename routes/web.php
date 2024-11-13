@@ -4,7 +4,7 @@ use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\aboutcontrol;
 use App\Http\Controllers\BeritaController;
-
+use App\Http\Controllers\loginregister;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,6 @@ use App\Http\Controllers\BeritaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get(uri:'/', action: [LandingController::class, 'index'])->name('index');
 Route::get('/about/valin', [aboutcontrol::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [aboutcontrol::class, 'rell'])->name('about.rell');
@@ -28,3 +27,4 @@ Route::get('berita/pbwo', [BeritaController::class, 'pbwo'])->name('berita.pbwo'
 Route::get('berita/bla', [BeritaController::class, 'bla'])->name('berita.bla');
 Route::get('berita/blo', [BeritaController::class, 'blo'])->name('berita.blo');
 
+Route::get('/loginreg/login', [loginregister::class, 'login'])->name('loginreg.login');
