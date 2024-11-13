@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul')->unique();
             $table->string('foto');
             $table->string('deskripsi');
+            $table->timestamps();
         });
     }
 
