@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('umur');
             $table->string('bio');
             $table->string('gambar');
+            $table->timestamps();
 
         });
     }
