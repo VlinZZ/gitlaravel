@@ -23,11 +23,11 @@ $userProfile = [
     'TGL LAHIR' => '02-February-2007',
     'KEAHLIAN' => 'Software Engineer',
     'BIO PROFIL' => 'Halo Nama Saya Revalino Jihadil lopa biasanya di panggil valin, umur saya 17 Tahun Saya bersekolah di smkn2 padang, Salam kenal Sayonara <3',
-    'image' => '../assets/revalino.jpg' // URL gambar profil
+    'image' => '{{ asset("../assets/revalino.jpg") }}' // URL gambar profil
 ];
 ?>
 <div class="container mt-4">
-    <a href="../" style="font-size:25px; font-family: Cambria, Times New Roman, serif;">
+    <a href="{{ url('/') }}" style="font-size:25px; font-family: Cambria, Times New Roman, serif;">
         <button class="responsive-button">Back To About</button>
     </a>
     <h1 style="bottom : 10px"></h1>

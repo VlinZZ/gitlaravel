@@ -25,7 +25,7 @@ $userProfile = [
     'TGL LAHIR' => 'Private',
     'KEAHLIAN' => 'Software Engineer',
     'BIO PROFIL' => 'Halo Nama Saya Taufiq Hidayat biasanya di panggil Fiqhi, umur saya 18 Tahun Saya bersekolah di smkn2 padang, Salam kenal Sayonara <3',
-    'image' => '../assets/taufiq.jpg' // URL gambar profil
+    'image' => '{{ asset("../assets/revalino.jpg") }}' // URL gambar profil
 ];
 ?>
 <div class="container mt-4">
