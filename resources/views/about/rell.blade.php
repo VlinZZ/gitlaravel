@@ -23,7 +23,7 @@ $userProfile = [
     'TGL LAHIR' =>       '07-juni-2007',
     'KEAHLIAN' =>        'Software Engineer',
     'BIO PROFIL' =>      'Halo Nama Saya Farel Yuhandriza Putra Biasanya Di Panggil Farel, umur saya 17 Tahun Saya bersekolah di smkn2 padang, Salam kenal Sayonara <3',
-    'image' =>           '{{ asset("../assets/revalino.jpg") }}' // URL gambar profil
+    'image' =>           '../assets/revalino.jpg' // URL gambar profil
 ];
 ?>
 <div class="container m-4">

@@ -23,7 +23,7 @@ $userProfile = [
     'TGL LAHIR' => '02-February-2007',
     'KEAHLIAN' => 'Software Engineer',
     'BIO PROFIL' => 'Halo Nama Saya Revalino Jihadil lopa biasanya di panggil valin, umur saya 17 Tahun Saya bersekolah di smkn2 padang, Salam kenal Sayonara <3',
-    'image' => '{{ asset("../assets/revalino.jpg") }}' // URL gambar profil
+    'image' => '../assets/revalino.jpg' // URL gambar profil
 ];
 ?>
 <div class="container mt-4">
