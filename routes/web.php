@@ -6,6 +6,7 @@ use App\Http\Controllers\aboutcontrol;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\loginregister;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,7 @@ Route::get('/loginreg/login', [loginregister::class, 'login'])->name('loginreg.l
 Route::get('/login', function () {return view('login');});
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::resource('profiles', ProfileController::class);
+
 
