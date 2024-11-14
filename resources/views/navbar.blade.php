@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active m-2" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active m-2" aria-current="page" href="{{ url('/')}}"><i class="fa fa-home" aria-hidden="true">  Home</i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link m-2" href="#about-section">About</a>

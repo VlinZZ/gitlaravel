@@ -10,7 +10,6 @@
 <body>
     <div class="goblok">
         <form action="{{ route('login') }}" method="POST">
-            @csrf
             <div class="anjay">
                 <small><a href="../"><i class="fa fa-arrow-left"> Kembali</i></a></small>
             </div>
