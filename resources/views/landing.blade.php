@@ -35,7 +35,7 @@
      <div class="about-card card">
          <img src="assets/farel.jpg" class="card-img-top" alt="Farel Yuhandriza Putra">
          <div class="card-body">
-             <h3 class="card-title">$nama</h3>
+             <h3 class="card-title">Farel Yuhandriza Putra</h3>
              <p class="card-text">Informasi tentang Saya</p>
              <a href="{{ route('about.rell') }}" class="btn btn-about">Lihat</a>
          </div>

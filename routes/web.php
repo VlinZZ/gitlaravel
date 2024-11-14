@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\aboutcontrol;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\loginregister;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::get('berita/bla', [BeritaController::class, 'bla'])->name('berita.bla');
 Route::get('berita/blo', [BeritaController::class, 'blo'])->name('berita.blo');
 
 Route::get('/loginreg/login', [loginregister::class, 'login'])->name('loginreg.login');
+
+Route::get('/login', function () {return view('login');});
+
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+

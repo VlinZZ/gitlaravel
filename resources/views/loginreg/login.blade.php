@@ -9,17 +9,18 @@
 </head>
 <body>
     <div class="goblok">
-        <form>
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="anjay">
                 <small><a href="../"><i class="fa fa-arrow-left"> Kembali</i></a></small>
             </div>
             <h1>Login</h1>
             <div class="uwu">
                 <i class="fa fa-user"> User</i>
-                   <input type="text" placeholder="Masukan Username" required>
-                        <i class="fa fa-lock"> Password</i>
-                        <input type="password" placeholder="Masukan Password" required>
-                   <input type="submit" value="Login">
+                <input type="email" name="email" placeholder="Masukan Email" required>
+                <i class="fa fa-lock"> Password</i>
+                <input type="password" name="password" placeholder="Masukan Password" required>
+                <input type="submit" value="Login">
                 <small>Belum punya account? <a href="register.html">Register</a></small>
             </div>
         </form>
