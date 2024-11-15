@@ -4,6 +4,24 @@
 
 @section('content')
 
+{{-- header --}}
+<div class="bg-body-tertiary">
+    <div class="container mt-5 pt-5">
+        <div class="card p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/kelompok.jpg" class="img-fluid" alt="Kelompok" width="500">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-3">Hai, Selamat Datang di Website</h2>
+                    <p class="text-muted">"Hasil Kerja Kami Bertiga"</p>
+                    <p>Di sini Anda dapat menemukan informasi tentang anggota kami dan beberapa berita yang telah kami buat. Anda juga dapat menambah berita di dalam website ini.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{-- about --}}
 <script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script>
 <script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script>

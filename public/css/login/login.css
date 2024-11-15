@@ -24,7 +24,7 @@ form {
     text-align: center;
     display: grid;
 }
-input[type="text"], input[type="password"] {
+input[type="email"], input[type="password"] {
     width: 90%;
     padding: 10px;
     margin: 15px;
@@ -33,6 +33,7 @@ input[type="text"], input[type="password"] {
     font-size: 15px;
     padding-left: 20px;
 }
+
 
 input[type="submit"] {
     width: 92%;

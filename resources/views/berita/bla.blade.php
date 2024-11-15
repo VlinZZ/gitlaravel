@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+    @include('navbar')
     <div class="container mt-5">
         <a href="../" class="fa fa-arrow-left back-btn" aria-hidden="true"> Back</a>
 
