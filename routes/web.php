@@ -28,9 +28,15 @@ Route::get('berita/pbwo', [BeritaController::class, 'pbwo'])->name('berita.pbwo'
 Route::get('berita/bla', [BeritaController::class, 'bla'])->name('berita.bla');
 Route::get('berita/blo', [BeritaController::class, 'blo'])->name('berita.blo');
 
-Route::get('/loginreg/login', [loginregister::class, 'login'])->name('loginreg.login');
-
-Route::get('/login', function () {return view('login');});
+Route::get('/login', function () {
+    return view('loginreg.login');
+})->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/about', function () { return view('admin.about'); })->name('admin.about');
+    Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
+    Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
+});
 

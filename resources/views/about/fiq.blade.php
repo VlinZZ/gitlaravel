@@ -15,6 +15,7 @@ body, a:hover {cursor: url(http://cur.cursors-4u.net/cursors/cur-9/cur862.ani), 
 <script type="text/javascript" src="https://drvee07.github.io/loc/rev.js"></script>
 </head>
 <body>
+    @include('navbar')
 <?php
 // Data user dinamis
 $userProfile = [

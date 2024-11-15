@@ -1,0 +1,44 @@
+/* public/css/admin.css */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.sidebar ul li a:hover {
+    color: #ff9800;
+}
+
+.main-content {
+    padding: 20px;
+    width: 100%;
+    background-color: #f4f4f9;
+}
