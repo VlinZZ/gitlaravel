@@ -9,7 +9,7 @@
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="col-md-6 col-lg-4 rounded shadow-lg p-5 bg-white form-container">
-        <button class="btn bg-black text-light"><a href="{{ url('/') }}"><i class="fa fa-arrow-left"> Back</i></a></button>
+        <a href="../" class="fa fa-arrow-left"> Back</a>
         <h2 class="text-center mb-4">Tambah Berita</h2>
         <form action="{{ route('beritas.store') }}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
