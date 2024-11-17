@@ -1,44 +1,128 @@
-/* public/css/admin.css */
+/* admin.css */
 
+/* Container utama untuk admin */
 .admin-container {
     display: flex;
     min-height: 100vh;
+    overflow: hidden; /* Mencegah scroll horizontal jika layout tidak rapi */
 }
 
+/* Sidebar */
 .sidebar {
-    width: 200px;
-    background-color: #333;
-    color: #fff;
+    width: 250px; /* Lebar sidebar */
+    background-color: #333; /* Latar belakang sidebar */
+    color: #fff; /* Warna teks di sidebar */
     padding: 20px;
-    height: 100vh;
+    position: fixed; /* Sidebar tetap pada posisi */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Sidebar memenuhi tinggi layar */
+    overflow-y: auto; /* Tambahkan scroll jika konten terlalu panjang */
+    z-index: 10; /* Pastikan sidebar berada di atas */
 }
 
-.sidebar h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+/* Styling untuk logo */
+.sidebar .logo img {
+    width: 60px; /* Ukuran logo */
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover; /* Agar logo tidak terdistorsi */
 }
 
+.sidebar .logo h3 {
+    font-size: 16px; /* Ukuran teks nama panel */
+    font-weight: bold;
+    color: #fff; /* Warna putih untuk teks */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Menu list */
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin-bottom: 15px; /* Jarak antar item menu */
 }
 
-.sidebar ul li a {
-    color: #fff;
+/* Menu item */
+.sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px; /* Tambahkan padding */
     text-decoration: none;
-    font-size: 1em;
+    color: #fff; /* Warna teks default */
+    font-size: 16px; /* Ukuran font teks */
+    border-radius: 5px; /* Rounded edges untuk tampilan modern */
+    transition: all 0.3s ease; /* Animasi transisi hover */
 }
 
-.sidebar ul li a:hover {
-    color: #ff9800;
+/* Hover efek menu item */
+.sidebar .menu-item:hover {
+    background-color: #007bff; /* Warna biru saat di-hover */
+    color: #fff; /* Warna teks tetap putih saat hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    transform: translateX(5px); /* Gerakkan sedikit ke kanan saat hover */
 }
 
+/* Ikon dalam menu */
+.sidebar .menu-item i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+    font-size: 18px; /* Ukuran ikon */
+}
+
+/* Hover efek ikon */
+.sidebar .menu-item:hover i {
+    transform: scale(1.2); /* Ikon membesar sedikit saat di-hover */
+    transition: transform 0.2s ease;
+}
+
+/* Main content area */
 .main-content {
+    margin-left: 280px;
     padding: 20px;
-    width: 100%;
     background-color: #f4f4f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative; /* Pastikan berada dalam alur dokumen */
+    z-index: 1; /* Pastikan tidak menimpa sidebar */
+}
+
+
+/* Konten tambahan untuk tes */
+.main-content h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px; /* Sesuaikan dengan lebar sidebar */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%; /* Sidebar memenuhi lebar layar */
+        height: auto;
+        position: relative; /* Sidebar menjadi elemen biasa */
+    }
+
+    .main-content {
+        margin-left: 0; /* Hapus margin untuk layar kecil */
+    }
 }

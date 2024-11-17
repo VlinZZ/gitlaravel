@@ -81,7 +81,7 @@ class BeritaController extends Controller
 
         return redirect()->route('beritas.index')->with('success', 'Berita berhasil dihapus.');
     }
-    
+
     public function  joko()
     {
         return view('berita.joko');

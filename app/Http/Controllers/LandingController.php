@@ -14,6 +14,11 @@ class LandingController extends Controller
         return view('landing');
     }
 
+    public function admin()
+    {
+        return view('ketua.admin');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
