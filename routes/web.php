@@ -7,6 +7,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\loginregister;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,6 @@ Route::resource('profiles', ProfileController::class);
     Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
     Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
     Route::get('/CRUD', function () { return view('admin.CRUD'); })->name('admin.CRUD');
+
+Route::get('/user/first', [UserController::class, 'getFirstUser']);
+Route::get('/user/{email}', [UserController::class, 'getUserByCondition']);
