@@ -19,6 +19,7 @@
                 <li><a href="{{ route('admin.about') }}" class="menu-item"><i class="fa fa-info-circle"></i> About</a></li>
                 <li><a href="{{ route('admin.berita') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> Berita</a></li>
                 <li><a href="{{ route('admin.user') }}" class="menu-item"><i class="fa fa-user"></i> User</a></li>
+                <li><a href="{{ route('admin.CRUD') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> CRUD</a></li>
             </ul>
         </aside>
 
