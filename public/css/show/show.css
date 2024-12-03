@@ -1,0 +1,18 @@
+.btn-custom {
+    background-color: #000000;
+    color: white;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  .btn-custom:hover {
+    background-color: #404040;
+    text-decoration: none;
+    color: #ddd;
+  }
