@@ -6,8 +6,8 @@ use App\Http\Controllers\aboutcontrol;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\loginregister;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,10 @@ use App\Http\Controllers\UserController;
 
 
 Route::get(uri:'/', action: [LandingController::class, 'index'])->name('index');
+
+Route::resource('abouts', AboutController::class);
+Route::get('/abouts/{id}/edit', [AboutController::class, 'edit'])->name('abouts.edit');
+Route::put('/abouts/{id}', [AboutController::class, 'update'])->name('abouts.update');
 Route::get('/about/valin', [aboutcontrol::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [aboutcontrol::class, 'rell'])->name('about.rell');
 Route::get('/about/fiq', [aboutcontrol::class, 'fiq'])->name('about.fiq');
@@ -39,7 +43,6 @@ Route::get('/login', function () {
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::resource('profiles', ProfileController::class);
 
 
 
@@ -50,3 +53,8 @@ Route::resource('profiles', ProfileController::class);
 
 Route::get('/user/first', [UserController::class, 'getFirstUser']);
 Route::get('/user/{email}', [UserController::class, 'getUserByCondition']);
+
+
+
+
+
