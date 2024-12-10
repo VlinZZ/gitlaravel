@@ -10,30 +10,29 @@ class AuthController extends Controller
 {
 
     public function showLoginForm()
-{
-    return view('loginreg.login'); // Sesuaikan dengan path file Blade Anda
-}
+    {
+        return view('loginreg.login'); // Sesuaikan dengan path file Blade Anda
+    }
 
     public function login(Request $request)
 
+    {
+        $credentials = $request->validate([
+            'nama' => ['required', 'string'],
+            'password' => ['required', 'string'],
+        ]);
 
-{
-    $credentials = $request->validate([
-        'nama' => ['required', 'string'],
-        'password' => ['required', 'string'],
-    ]);
+        // Cek kredensial
+        if (Auth::attempt(['nama' => $credentials['nama'], 'password' => $credentials['password']])) {
+            $request->session()->regenerate();
+            // Mengarahkan ke route 'ketua.admin'
+            return redirect()->route('ketua.admin');
+        }
 
-    // Cek kredensial
-    if (Auth::attempt(['nama' => $credentials['nama'], 'password' => $credentials['password']])) {
-        $request->session()->regenerate();
-        // Mengarahkan ke route 'ketua.admin'
-        return redirect()->route('ketua.admin');
+        return back()->withErrors([
+            'loginError' => 'Nama atau Password salah.',
+        ]);
     }
-
-    return back()->withErrors([
-        'loginError' => 'Nama atau Password salah.',
-    ]);
-}
 
 
     public function logout(Request $request)

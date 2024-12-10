@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Halaman Utama dan About
-Route::get('/', [LandingController::class, 'index'])->name('index');
 Route::get('/about/valin', [AboutControl::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [AboutControl::class, 'rell'])->name('about.rell');
 Route::get('/about/fiq', [AboutControl::class, 'fiq'])->name('about.fiq');

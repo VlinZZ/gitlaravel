@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Berita;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class BeritaController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class BeritaController extends Controller
      * @return View
      */
 
-     //index
+    //index
     public function index(): View
     {
         $beritas = Berita::get();
@@ -29,27 +31,29 @@ class BeritaController extends Controller
     //store
     public function store(Request $request)
     {
+        $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
 
-    $request->validate([
-        'judul' => 'required',
-        'isi' => 'required',
-        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
-    ]);
+        try {
+            $gambarPath = null;
 
+            if ($request->hasFile('gambar')) {
+                $gambarPath = $request->file('gambar')->store('assets', 'public');
+            }
 
-    $gambarPath = null;
+            Berita::create([
+                'judul' => $request->judul,
+                'isi' => $request->isi,
+                'gambar' => $gambarPath
+            ]);
 
-    if ($request->hasFile('gambar')) {
-        $gambarPath = $request->file('gambar')->store('assets', 'public');
-    }
-
-    Berita::create([
-        'judul' => $request->judul,
-        'isi' => $request->isi,
-        'gambar' => $gambarPath
-    ]);
-
-    return redirect()->route('beritas.index')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->route('beritas.index')->with('success', 'Berita berhasil ditambahkan.');
+        } catch (\Throwable $e) {
+            return redirect()->route('beritas.index')->with('error', 'Terjadi error : ' . $e);
+        }
     }
 
     //edit
@@ -62,28 +66,28 @@ class BeritaController extends Controller
     //update
     public function update(Request $request, $id)
     {
-    $berita = Berita::findOrFail($id);
+        $berita = Berita::findOrFail($id);
 
-    $request->validate([
-        'judul' => 'required',
-        'isi' => 'required',
-        'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
-    ]);
+        $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
 
-    if ($request->hasFile('gambar')) {
-        if ($berita->gambar) {
-            Storage::delete('public/' . $berita->gambar);
+        if ($request->hasFile('gambar')) {
+            if ($berita->gambar) {
+                Storage::delete('public/' . $berita->gambar);
+            }
+            $berita->gambar = $request->file('gambar')->store('assets', 'public');
         }
-        $berita->gambar = $request->file('gambar')->store('assets', 'public');
-    }
 
-    $berita->update([
-        'judul' => $request->judul,
-        'isi' => $request->isi,
-        'gambar' => $berita->gambar
-    ]);
+        $berita->update([
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+            'gambar' => $berita->gambar
+        ]);
 
-    return redirect()->route('beritas.index')->with('success', 'Berita berhasil diupdate.');
+        return redirect()->route('beritas.index')->with('success', 'Berita berhasil diupdate.');
     }
 
 
@@ -106,10 +110,10 @@ class BeritaController extends Controller
     }
     public function landing($id = null)
     {
-    $beritas = Berita::all(); // Ambil semua data berita
-    $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
+        $beritas = Berita::all(); // Ambil semua data berita
+        $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
 
-    return view('landing', compact('beritas', 'selectedBerita'));
+        return view('landing', compact('beritas', 'selectedBerita'));
     }
 
 
