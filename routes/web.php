@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Halaman Utama dan About
+Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('admin.about.update');
 Route::get('/about/valin', [AboutControl::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [AboutControl::class, 'rell'])->name('about.rell');
 Route::get('/about/fiq', [AboutControl::class, 'fiq'])->name('about.fiq');
