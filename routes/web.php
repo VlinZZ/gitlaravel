@@ -50,7 +50,6 @@ Route::post('berita/store', [BeritaController::class, 'store'])->name('berita.st
 Route::get('/berita', [BeritaController::class, 'index'])->name('beritas.index');
 
     Route::get('/about', function () { return view('admin.about'); })->name('admin.about');
-    Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
     Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
     Route::get('/CRUD', function () { return view('admin.CRUD'); })->name('admin.CRUD');
 
