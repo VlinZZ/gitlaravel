@@ -106,10 +106,11 @@ class BeritaController extends Controller
     }
     public function landing($id = null)
     {
-    $beritas = Berita::all(); // Ambil semua data berita
-    $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
 
-    return view('landing', compact('beritas', 'selectedBerita'));
+    $beritas = Berita::all(); // Ambil semua data berita
+    // $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
+
+    return view('landing', compact('beritas'));
     }
 
 
