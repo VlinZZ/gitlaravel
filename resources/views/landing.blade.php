@@ -41,7 +41,7 @@
 <div class="card p-3">
 <div class="row">
  <div class="about-card-container d-flex justify-content-center gap-4 flex-wrap">
- <div class="about-card card">
+    <div class="about-card card">
          <img src="assets/revalino.jpg" class="card-img-top" alt="Revalino Jihadil Lopa">
          <div class="card-body">
              <h3 class="card-title">Revalino Jihadil Lopa</h3>
@@ -80,10 +80,9 @@
 
 <div class="card p-4">
     <div class="d-flex justify-content-end mb-3">
-        <a href="{{ route('berita.Tambah_Berita') }}" class="btn-add-news">Tambah Berita</a>
+        <a href="{{ url('berita/Tambah_Berita') }}" class="btn-add-news">Tambah Berita</a>
     </div>
     <div class="row">
-        <!-- Berita 1 -->
         <div class="col-md-6 mb-4">
             <a href="{{ route('berita.joko') }}" class="text-decoration-none">
                 <div class="card berita-card">
@@ -107,6 +106,19 @@
                 </div>
             </a>
         </div>
+        @foreach ($beritas as $berita)
+        <div class="col-md-6 mb-4">
+            <a href="{{ route('landing.show', $berita->id) }}" class="text-decoration-none">
+                <div class="card berita-card">
+                    <img src="{{ asset('storage/' . $berita->gambar) }}" class="card-img-top" alt="{{ $berita->judul }}">
+                    <div class="berita-card-overlay">
+                        <h5 class="card-title">{{ $berita->judul }}</h5>
+                        <p class="card-text">{{ \Illuminate\Support\Str::limit($berita->isi, 100) }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endforeach
         <!-- Berita 3 -->
         <div class="col-md-6 mb-4">
             <a href="{{ route('berita.bla') }}" class="text-decoration-none">
