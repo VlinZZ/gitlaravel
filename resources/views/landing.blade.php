@@ -41,6 +41,7 @@
 <div class="card p-3">
 <div class="row">
  <div class="about-card-container d-flex justify-content-center gap-4 flex-wrap">
+
     <div class="about-card card">
          <img src="assets/revalino.jpg" class="card-img-top" alt="Revalino Jihadil Lopa">
          <div class="card-body">
@@ -50,6 +51,7 @@
          </div>
      </div>
 
+     
      <div class="about-card card">
          <img src="assets/farel.jpg" class="card-img-top" alt="Farel Yuhandriza Putra">
          <div class="card-body">

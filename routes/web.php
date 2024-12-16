@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Halaman Utama dan About
+// Route::resource('abouts', AboutController::class);
+// Route untuk menampilkan halaman edit
+Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('admin.about.edit');
+
+
+
 Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('admin.about.update');
 Route::get('/about/valin', [AboutControl::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [AboutControl::class, 'rell'])->name('about.rell');
@@ -50,7 +57,7 @@ Route::post('berita/store', [BeritaController::class, 'store'])->name('berita.st
 Route::get('/berita', [BeritaController::class, 'index'])->name('beritas.index');
 
     Route::get('/about', function () { return view('admin.about'); })->name('admin.about');
-    Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
+    // Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
     Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
     Route::get('/CRUD', function () { return view('admin.CRUD'); })->name('admin.CRUD');
 
