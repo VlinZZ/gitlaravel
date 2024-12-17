@@ -15,12 +15,13 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" />
+                <a href="{{ url('/') }}">
+                <img src="{{ asset('assets/logo.png') }}" alt="Logo" /></a>
                 <h3>Admin Panel</h3>
             </div>
             <ul class="menu">
                 <li><a href="{{ url('/about') }}" class="menu-item"><i class="fa fa-info-circle"></i> About</a></li>
-                <li><a href="{{ url('/berita') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> Berita</a></li>
+                <li><a href="{{ url('/beritas') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> Berita</a></li>
                 <li><a href="{{ url('/user') }}" class="menu-item"><i class="fa fa-user"></i> User</a></li>
                 <li><a href="{{ url('/CRUD') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> CRUD</a></li>
             </ul>
