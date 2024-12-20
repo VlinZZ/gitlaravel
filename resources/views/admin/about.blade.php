@@ -1,135 +1,78 @@
- @extends('ketua.admin')
+@extends('ketua.admin') <!-- Sesuaikan dengan layout utama yang kamu gunakan -->
 
- @section('content')
-     <div class="container">
-         <h1>Edit About</h1>
+@section('content')
+<div class="container">
+    <h1>Edit About</h1>
 
-         <!-- Tampilkan pesan error validasi -->
-         @if ($errors->any())
-             <div class="alert alert-danger">
-                 <ul>
-                     @foreach ($errors->all() as $error)
-                         <li>{{ $error }}</li>
-                     @endforeach
-                 </ul>
-             </div>
-         @endif
+    <!-- Tampilkan pesan sukses jika ada -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
-         <form action="{{ route('admin.about.update', $about->id) }}" method="POST">
-             @csrf
-             @method('PUT')
+    <!-- Tampilkan pesan error jika validasi gagal -->
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-             <div>
-                 <label for="image-logo">Logo:</label>
-                 <input type="text" name="image-logo" id="image-logo" value="{{ $about->{'image-logo'} }}"><br>
-             </div>
+    <!-- Form Edit About -->
+    <form action="{{ route('admin.about.update', $about->id) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-             <div class="form-group">
-                 <label for="judul">Judul:</label>
-                 <input type="text" name="judul" id="judul" class="form-control" value="{{ $about->judul }}"
-                     required>
-             </div>
+        <div class="form-group">
+            <label for="image_logo">Logo:</label>
+            <input type="text" name="image_logo" id="image_logo" class="form-control" value="{{ $about->image_logo }}">
+        </div>
 
-             <div class="form-group">
-                 <label for="diskripsi">Diskripsi:</label>
-                 <textarea name="diskripsi" id="diskripsi" class="form-control" required>{{ $about->diskripsi }}</textarea>
-             </div>
+        <div class="form-group">
+            <label for="judul">Judul:</label>
+            <input type="text" name="judul" id="judul" class="form-control" value="{{ $about->judul }}" required>
+        </div>
 
-             <div class="form-group">
-                 <label for="name_1">Nama Anggota 1:</label>
-                 <input type="text" name="name_1" id="name_1" class="form-control" value="{{ $about->name_1 }}"
-                     required>
-             </div>
+        <div class="form-group">
+            <label for="diskripsi">Deskripsi:</label>
+            <textarea name="diskripsi" id="diskripsi" class="form-control" required>{{ $about->diskripsi }}</textarea>
+        </div>
 
-             <div class="form-group">
-                 <label for="email_1">Email Anggota 1:</label>
-                 <input type="email" name="email_1" id="email_1" class="form-control" value="{{ $about->email_1 }}"
-                     required>
-             </div>
+        <div class="form-group">
+            <label for="name_1">Nama Anggota 1:</label>
+            <input type="text" name="name_1" id="name_1" class="form-control" value="{{ $about->name_1 }}" required>
+        </div>
 
-             <!-- Tambahkan input lainnya sesuai kebutuhan -->
+        <div class="form-group">
+            <label for="email_1">Email Anggota 1:</label>
+            <input type="email" name="email_1" id="email_1" class="form-control" value="{{ $about->email_1 }}" required>
+        </div>
 
-             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-         </form>
-     </div>
+        <div class="form-group">
+            <label for="no_hp_1">No HP Anggota 1:</label>
+            <input type="text" name="no_hp_1" id="no_hp_1" class="form-control" value="{{ $about->no_hp_1 }}" required>
+        </div>
 
-     
-     <div class="container mt-5">
-         <div class="row">
-             <div class="col-md-12">
-                 <div>
-                     <h3 class="text-center my-4">Dibuat Oleh Sedikit Kemampuan dan sedikit keahlian Mrx Mile Random X</h3>
-                     <hr>
-                 </div>
-                 <div class="card border-0 shadow-sm rounded">
-                     <div class="card-body">
-                         <a href="{{ url('berita/Tambah_Berita') }}" class="btn btn-md btn-success mb-3">Tambah
-                             Berita</a>
-                         <table class="table table-bordered">
-                             <thead>
-                                 <tr>
-                                     <th>GAMBAR</th>
-                                     <th>JUDUL</th>
-                                     <th>ISI</th>
-                                     <th>AKSI</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 @forelse ($item as $berita)
-                                     <tr>
-                                         <td>
-                                             @if ($berita->gambar)
-                                                 <img src="{{ asset('storage/' . $berita->gambar) }}" alt="Gambar Berita"
-                                                     style="width: 150px;">
-                                             @else
-                                                 Tidak ada gambar
-                                             @endif
-                                         </td>
-                                         <td>{{ $berita->judul }}</td>
-                                         <td>{{ $berita->isi }}</td>
-                                         <td>
-                                             <a href="{{ route('beritas.show', $berita->id) }}"
-                                                 class="btn btn-sm btn-dark">SHOW</a>
-                                             <a href="{{ route('beritas.edit', $berita->id) }}"
-                                                 class="btn btn-sm btn-primary">EDIT</a>
-                                             <form action="{{ route('beritas.destroy', $berita->id) }}" method="POST"
-                                                 style="display:inline;">
-                                                 @csrf
-                                                 @method('DELETE')
-                                                 <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                                             </form>
-                                         </td>
-                                     </tr>
-                                 @empty
-                                     <tr>
-                                         <td colspan="4" class="text-center">Data tidak tersedia.</td>
-                                     </tr>
-                                 @endforelse
-                             </tbody>
-                         </table>
-                         {{--  {{ $beritas->links() }}  --}}
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
+        <div class="form-group">
+            <label for="tmpt_tgl_1">Tempat & Tanggal Lahir Anggota 1:</label>
+            <input type="text" name="tmpt_tgl_1" id="tmpt_tgl_1" class="form-control" value="{{ $about->tmpt_tgl_1 }}" required>
+        </div>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <div class="form-group">
+            <label for="umur_1">Umur Anggota 1:</label>
+            <input type="number" name="umur_1" id="umur_1" class="form-control" value="{{ $about->umur_1 }}" required>
+        </div>
 
-     <script>
-         //message with toastr
-         @if (session()->has('success'))
+        <div class="form-group">
+            <label for="bio_1">Bio Anggota 1:</label>
+            <textarea name="bio_1" id="bio_1" class="form-control" required>{{ $about->bio_1 }}</textarea>
+        </div>
 
-             toastr.success('{{ session('success') }}', 'BERHASIL!');
-         @elseif (session()->has('error'))
-
-             toastr.error('{{ session('error') }}', 'GAGAL!');
-         @endif
-     </script>
-
-     </body>
-
-     </html>
- @endsection
+        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+    </form>
+</div>
+@endsection
