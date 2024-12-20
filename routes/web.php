@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\aboutControl;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\AuthController;
@@ -27,9 +26,9 @@ use Illuminate\Routing\Route as RoutingRoute;
 Route::resource('abouts', AboutController::class);
 Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('admin.about.edit');
 Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('admin.about.update');
-Route::get('/about/valin', [AboutControl::class, 'valin'])->name('about.valin');
-Route::get('/about/rell', [AboutControl::class, 'rell'])->name('about.rell');
-Route::get('/about/fiq', [AboutControl::class, 'fiq'])->name('about.fiq');
+Route::get('/about/valin', [AboutController::class, 'valin'])->name('about.valin');
+Route::get('/about/rell', [AboutController::class, 'rell'])->name('about.rell');
+Route::get('/about/fiq', [AboutController::class, 'fiq'])->name('about.fiq');
 
 // Rute Berita
 Route::resource('beritas', BeritaController::class);
@@ -55,7 +54,7 @@ Route::middleware('auth')->group(function () {
 Route::post('berita/store', [BeritaController::class, 'store'])->name('berita.store');
 Route::get('/berita', [BeritaController::class, 'index'])->name('beritas.index');
 
-    Route::get('/admin/about', [AboutController::class, 'index'])->name('admin.about');
+    Route::get('/admin/abouts', [AboutController::class, 'index'])->name('abouts.index');
     // Route::get('/berita', function () { return view('admin.berita'); })->name('admin.berita');
     Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
     Route::get('/CRUD', function () { return view('admin.CRUD'); })->name('admin.CRUD');
