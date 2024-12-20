@@ -12,7 +12,6 @@ class AboutController extends Controller
         $abouts = About::all();
         return view('admin.about', compact('abouts'));
     }
-w
 
 
 
