@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Berita;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -112,8 +113,9 @@ class BeritaController extends Controller
     {
         $beritas = Berita::all(); // Ambil semua data berita
         $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
-
-        return view('landing', compact('beritas', 'selectedBerita'));
+        $about = About::first();
+        // dd($about);
+        return view('landing', compact('beritas', 'selectedBerita', 'about'));
     }
 
 

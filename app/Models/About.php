@@ -10,12 +10,12 @@ class About extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image-logo',
+        'image_logo',
         'image_header',
         'judul',
         'diskripsi',
         'image_1',
-        'name_1',
+        'name_1', 
         'jurusan_1',
         'anggota_1',
         'email_1',

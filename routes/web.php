@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\AboutControl;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Route;
 
 // Route untuk menampilkan halaman edit
 Route::resource('abouts', AboutController::class);
-Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('admin.about.edit');
-Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('admin.about.update');
+Route::get('/about/{id}/edit', [AboutController::class, 'edit'])->name('admin.edit');
+Route::put('/about/{id}', [AboutController::class, 'update'])->name('about.update');
 Route::get('/about/valin', [AboutController::class, 'valin'])->name('about.valin');
 Route::get('/about/rell', [AboutController::class, 'rell'])->name('about.rell');
 Route::get('/about/fiq', [AboutController::class, 'fiq'])->name('about.fiq');
-Route::get('/about/valin', [AboutControl::class, 'valin'])->name('about.valin');
-Route::get('/about/rell', [AboutControl::class, 'rell'])->name('about.rell');
-Route::get('/about/fiq', [AboutControl::class, 'fiq'])->name('about.fiq');
+
 
 // Rute Berita
 Route::resource('beritas', BeritaController::class);
@@ -46,7 +44,7 @@ Route::middleware('auth')->group(function () {
     })->name('ketua.admin');
 
     // Admin Routes
-    Route::get('/about', function () { return view('admin.about'); })->name('admin.about');
+    Route::get('/abouts/admin', function () { return view('admin.about'); })->name('admin.about');
     // Route::get('/beritas', function () { return view('admin.berita'); })->name('admin.berita');
     Route::get('/user', function () { return view('admin.user'); })->name('admin.user');
     Route::get('/CRUD', function () { return view('admin.CRUD'); })->name('admin.CRUD');

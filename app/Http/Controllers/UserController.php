@@ -42,12 +42,14 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+
         // Menampilkan formulir untuk mengedit pengguna
         return view('admin.user_edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
     {
+        dd($request);
         // Validasi data input
         $request->validate([
             'nama' => 'required',
