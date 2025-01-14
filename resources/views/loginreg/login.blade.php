@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +24,7 @@
                 @error('loginError')
                 <small style="color:red;">{{ $message }}</small>
                 @enderror
-                <small>Belum punya account? <a href="register.html">Register</a></small>
+                <small>Belum punya account? <a href="{{ route('register') }}">Register</a></small>
             </div>
         </form>
     </div>

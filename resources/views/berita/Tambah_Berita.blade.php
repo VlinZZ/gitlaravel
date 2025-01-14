@@ -13,7 +13,7 @@
     <div class="col-md-6 col-lg-4 rounded shadow-lg p-5 bg-white form-container">
         <a href="../" class="fa fa-arrow-left"> Back</a>
         <h2 class="text-center mb-4">Tambah Berita</h2>
-        <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('beritas.store') }}" method="POST" enctype="multipart/form-data">
             @csrf <!-- Menambahkan CSRF Token untuk keamanan -->
             <div class="mb-3">
                 <label for="judulBerita" class="form-label">Judul Berita</label>
