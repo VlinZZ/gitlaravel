@@ -11,15 +11,18 @@ class AboutController extends Controller
 
     public function valin()
     {
-        return view('about.valin');
+        $about = about::first();
+        return view('about.valin', ['about' => $about]);
     }
     public function rell()
     {
-        return view('about.rell');
+        $about = about::first();
+        return view('about.rell', ['about' => $about]);
     }
     public function fiq()
     {
-        return view('about.fiq');
+        $about = about::first();
+        return view('about.fiq', ['about' => $about]);
     }
 
     public function index()
@@ -76,7 +79,7 @@ class AboutController extends Controller
             'umur_3' => 'required|string|max:255',
             'bio_3' => 'required|string',
         ]);
-       
+
 
 
         $about = about::findOrFail($id);
@@ -138,7 +141,6 @@ class AboutController extends Controller
             $foto_1->storeAs('public/uploads', $foto_1->hashName());
             Storage::disk('local')->delete('public/uploads/' . $image_1);
             $data['image_1'] = $foto_1->hashName();
-
         }
 
         $image_2 = $about->image_2;
@@ -147,7 +149,6 @@ class AboutController extends Controller
             $foto_2->storeAs('public/uploads', $foto_2->hashName());
             Storage::disk('local')->delete('public/uploads/' . $image_2);
             $data['image_2'] = $foto_2->hashName();
-
         }
 
         $image_3 = $about->image_3;
@@ -156,7 +157,6 @@ class AboutController extends Controller
             $foto_3->storeAs('public/uploads', $foto_3->hashName());
             Storage::disk('local')->delete('public/uploads/' . $image_3);
             $data['image_3'] = $foto_3->hashName();
-
         }
 
 
@@ -166,6 +166,6 @@ class AboutController extends Controller
         // Simpan about lainnya
 
 
-        return redirect()->route('abouts.index')->with('success', 'about berhasil diperbarui.');
+        return redirect()->route('about.index')->with('success', 'about berhasil diperbarui.');
     }
 }

@@ -21,20 +21,6 @@
         }
     </style>
     <script type="text/javascript" src="https://drvee07.github.io/loc/rev.js"></script>
-    <?php
-    // Data user dinamis
-        $userProfile = [
-        'NAMA' => 'Taufiq Hidayat',
-        'GMAIL' => 'taufiqhidy@gmail.com',
-        'NOMOR HP' => '+84398282715 ( Whatsapp )',
-        'ALAMAT' => 'Private',
-        'TGL LAHIR' => 'Private',
-        'KEAHLIAN' => 'Software Engineer',
-        'ANGGOTA' => '3',
-        'BIO PROFIL' => 'Halo Nama Saya Taufiq Hidayat biasanya di panggil Fiqhi, umur saya 18 Tahun Saya bersekolah di smkn2 padang, Salam kenal Sayonara <3',
-        'image' => '../assets/taufiq.jpg' // URL gambar profil
-    ];
-    ?>
     @include('navbar')
     <div class="container mt-4">
         <hr class="container mt-5 mb-5">
@@ -44,37 +30,37 @@
         <hr class="container mb-1">
         <div class="row">
             <div class="col-md-4">
-                <img src="<?php echo $userProfile['image']; ?>" alt="Profile Picture" class="img-responsive">
+                <img src="{{asset('assets/taufiq.jpg')}}" alt="Profile Picture" class="img-responsive">
             </div>
             <div class="col-md-8">
-                <h1 class="font-name"><?php echo $userProfile['NAMA']; ?></h1>
-                <p class="font-name-muted"><?php echo $userProfile['KEAHLIAN']; ?></p>
+                <h1> {{$about->name_3 }} </h1>
+                <p> {{$about->jurusan_3}} </p>
                 <div class="table-container">
                     <table class="table-color">
                         <tbody>
                             <tr>
                                 <td>Anggota</td>
-                                <td><?php echo $userProfile['ANGGOTA']; ?></td>
+                                <td>{{$about->anggota_3 ?? 'Anggota tidak tersedia'}}</td>
                             </tr>
                             <tr>
                                 <td>Email User</td>
-                                <td><?php echo $userProfile['GMAIL']; ?></td>
+                                <td>{{$about->email_3 ?? 'Email tidak tersedia'}}</td>
                             </tr>
                             <tr>
                                 <td>Nomor HP</td>
-                                <td><?php echo $userProfile['NOMOR HP']; ?></td>
+                                <td>{{$about->no_hp_3 ?? 'No HP tidak tersedia'}}</td>
                             </tr>
                             <tr>
                                 <td>Tempat Tinggal</td>
-                                <td><?php echo $userProfile['ALAMAT']; ?></td>
+                                <td>{{$about->tmpt_tgl_3 ?? 'Tempat tidak tersedia'}}</td>
                             </tr>
                             <tr>
                                 <td>Umur</td>
-                                <td><?php echo $userProfile['TGL LAHIR']; ?></td>
+                                <td>{{$about->umur_3 ?? 'Umur tidak tersedia'}}</td>
                             </tr>
                             <tr>
                                 <td>Bio Profil</td>
-                                <td><?php echo $userProfile['BIO PROFIL']; ?></td>
+                                <td>{{$about->bio_3 ?? 'Bio tidak tersedia'}}</td>
                             </tr>
                         </tbody>
                     </table>
