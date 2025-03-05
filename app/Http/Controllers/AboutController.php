@@ -166,6 +166,6 @@ class AboutController extends Controller
         // Simpan about lainnya
 
 
-        return redirect()->route('about.index')->with('success', 'about berhasil diperbarui.');
+        return redirect()->route('abouts.index')->with('success', 'about berhasil diperbarui.');
     }
 }

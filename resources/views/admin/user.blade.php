@@ -23,6 +23,16 @@
                     <td>{{ $user->email }}</td>
                     <td>********</td> <!-- Jangan tampilkan password asli -->
                     <td>
+                        <form action="{{ route('user.toggle-status', $user->id) }}" method="POST" style="display: inline;"
+                            onsubmit="return confirm('{{ $user->status === 'aktif' ? 'Apakah Anda yakin ingin mengnonaktifkan status ini?' : 'Apakah Anda yakin ingin mengaktifkan status ini?' }}')">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-sm {{ $user->status === 'aktif' ? 'btn-success' : 'btn-danger' }}">
+                                {{ $user->status === 'aktif' ? 'Aktif' : 'Tidak Aktif' }}
+                            </button>
+                        </form>
+                    </td>
+                    <td>
                         <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('admin.user.destroy', $user->id) }}" method="POST" style="display:inline;">
                             @csrf

@@ -22,7 +22,7 @@
                 @enderror
 
                 <i class="fa fa-envelope"> Email</i>
-                <input type="email" name="email" placeholder="Masukan Email" value="{{ old('email') }}" required><br>
+                <input type="text" name="email" placeholder="Masukan Email" value="{{ old('email') }}" required><br>
                 @error('email')
                 <small style="color:red;">{{ $message }}</small>
                 @enderror

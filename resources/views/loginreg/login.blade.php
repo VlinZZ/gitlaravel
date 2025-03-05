@@ -15,6 +15,9 @@
                 <small><a href="../"><i class="fa fa-arrow-left"> Kembali</i></a></small>
             </div>
             <h1>Login</h1>
+            @if(session('error'))
+            <div style="color: red;">{{ session('error') }}</div>
+        @endif
             <div class="uwu">
                 <i class="fa fa-user"> User</i>
                 <input type="text" name="nama" placeholder="Masukan Username" required><br>

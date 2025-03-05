@@ -35,6 +35,7 @@ class UserController extends Controller
             'nama' => $request->nama,
             'email' => $request->email,
             'password' => Hash::make($request->password),  // Password di-hash untuk keamanan
+            'status' => 'aktif',
         ]);
 
         return redirect()->route('admin.user')->with('success', 'User berhasil ditambahkan.');
@@ -87,5 +88,14 @@ class UserController extends Controller
     {
         $user = User::where('email', $email)->first();
         return response()->json($user);
+    }
+
+    public function toggleStatus($id)
+    {
+        $user = User::findOrfail($id);
+        $user->status = $user->status ==='aktif' ? 'tidak_aktif' : 'aktif';
+        $user->save();
+
+        return redirect()->route('admin.user')->with('success', 'Status pengguna berhasil diubah.');
     }
 }

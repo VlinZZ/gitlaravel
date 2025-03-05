@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -13,11 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::truncate();
+
         // Contoh data user
         DB::table('users')->insert([
             'nama' => 'Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('admin123'), // Hash password di sini
+            'role' => 'admin',
         ]);
 
         // Tambahkan data lainnya jika perlu
@@ -25,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'User1',
             'email' => 'user1@example.com',
             'password' => Hash::make('user123'),
+            'role' => 'admin',
         ]);
 
         // Pastikan 'Valin@gmail.com' ada
@@ -33,11 +38,14 @@ class DatabaseSeeder extends Seeder
                 'nama' => 'Valin',
                 'email' => 'Valin@gmail.com',
                 'password' => Hash::make('112233'),
+                'role' => 'admin',
             ]);
         } else {
             DB::table('users')->where('email', 'Valin@gmail.com')->update([
                 'password' => Hash::make('112233'), // Hash password
             ]);
+
         }
     }
 }
+

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/aboutadmin/admin.css') }}">
-    @yield('css')
 </head>
 <body>
     <div class="admin-container">
@@ -20,10 +20,28 @@
                 <h3>Admin Panel</h3>
             </div>
             <ul class="menu">
+                <li><a href="{{ url('/CRUD') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> Dashboard</a></li>
                 <li><a href="{{ url('/abouts') }}" class="menu-item"><i class="fa fa-info-circle"></i> About</a></li>
                 <li><a href="{{ url('/beritas') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> Berita</a></li>
                 <li><a href="{{ url('/user') }}" class="menu-item"><i class="fa fa-user"></i> User</a></li>
-                <li><a href="{{ url('/CRUD') }}" class="menu-item"><i class="fa fa-newspaper-o"></i> CRUD</a></li>
+                <body class="hold-transition sidebar-mini">
+                    <div class="wrapper">
+                        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                            <!-- Left navbar links -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                                            class="fas fa-bars"></i></a>
+                                <li class="nav-item d-none d-sm-inline-block">
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn  text-light  " >Logout</button>
+                                    </form>
+
+                                </li>
+                            </ul>
+                        </nav>
+
             </ul>
         </aside>
 

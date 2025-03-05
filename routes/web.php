@@ -43,7 +43,7 @@ Route::resource('profiles', ProfileController::class);
 
 // Rute Admin (Dilindungi oleh Middleware 'auth')
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/sidebar', function () {
+    Route::get('/CRUD', function () {
         return view('ketua.admin');
     })->name('ketua.admin');
 
@@ -66,4 +66,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/show/{id}', [BeritaController::class, 'show'])->name('show');
 Route::get('/', [BeritaController::class, 'landing'])->name('landing');
 Route::get('/beritas/{id}', [BeritaController::class, 'landing'])->name('landing.show');
+
+Route::patch('/user/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('user.toggle-status');
+
 
