@@ -23,12 +23,43 @@ class BeritaController extends Controller
         return view('admin.berita', ['item' => $beritas]);
     }
 
+    //aprove inprove
+    public function landing($id = null)
+    {
+        // Ambil hanya berita yang statusnya "approved"
+        $beritas = Berita::where('status', 'approved')->get();
+
+        $selectedBerita = $id ? Berita::find($id) : null;
+        $about = About::first();
+
+        return view('landing', compact('beritas', 'selectedBerita', 'about'));
+    }
+    public function approve($id)
+    {
+        $berita = Berita::findOrFail($id);
+        $berita->update([
+            'status' => 'approved',
+            'improve_notes' => null
+        ]);
+
+        return redirect()->back()->with('success', 'Berita berhasil disetujui!');
+    }
+    public function improve($id)
+    {
+        $berita = Berita::findOrFail($id);
+        $berita->update([
+            'status' => 'needs_improvement',
+            'improve_notes' => 'Silakan perbaiki berita ini sebelum disetujui.'
+        ]);
+
+        return redirect()->back()->with('error', 'Berita perlu diperbaiki!');
+    }
+
     //create
     public function create()
     {
         return view('berita.Tambah_Berita');
     }
-
     //store
     public function store(Request $request)
     {
@@ -48,14 +79,16 @@ class BeritaController extends Controller
             Berita::create([
                 'judul' => $request->judul,
                 'isi' => $request->isi,
-                'gambar' => $gambarPath
+                'gambar' => $gambarPath,
+                'status' => 'pending' // Tambahkan status default 'pending'
             ]);
 
-            return redirect()->route('beritas.index')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->route('beritas.index')->with('success', 'Berita berhasil dikirim dan menunggu persetujuan.');
         } catch (\Throwable $e) {
-            return redirect()->route('beritas.index')->with('error', 'Terjadi error : ' . $e);
+            return redirect()->route('beritas.index')->with('error', 'Terjadi error : ' . $e->getMessage());
         }
     }
+
 
     //edit
     public function edit($id)
@@ -109,15 +142,6 @@ class BeritaController extends Controller
 
         return view('show', compact('berita'));
     }
-    public function landing($id = null)
-    {
-        $beritas = Berita::all(); // Ambil semua data berita
-        $selectedBerita = $id ? Berita::find($id) : null; // Berita yang dipilih jika ada ID
-        $about = About::first();
-        // dd($about);
-        return view('landing', compact('beritas', 'selectedBerita', 'about'));
-    }
-
 
 
 

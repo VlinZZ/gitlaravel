@@ -132,19 +132,22 @@
                     </a>
                 </div>
                 @foreach ($beritas as $berita)
-                    <div class="col-md-6 mb-4">
-                        <a href="{{ route('landing.show', $berita->id) }}" class="text-decoration-none">
-                            <div class="card berita-card">
-                                <img src="{{ asset('storage/' . $berita->gambar) }}" class="card-img-top"
-                                    alt="{{ $berita->judul }}">
-                                <div class="berita-card-overlay">
-                                    <h5 class="card-title">{{ $berita->judul }}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($berita->isi, 100) }}</p>
+                    @if ($berita->status === 'approved')
+                        <div class="col-md-6 mb-4">
+                            <a href="{{ route('landing.show', $berita->id) }}" class="text-decoration-none">
+                                <div class="card berita-card">
+                                    <img src="{{ asset('storage/' . $berita->gambar) }}" class="card-img-top"
+                                        alt="{{ $berita->judul }}">
+                                    <div class="berita-card-overlay">
+                                        <h5 class="card-title">{{ $berita->judul }}</h5>
+                                        <p class="card-text">{{ \Illuminate\Support\Str::limit($berita->isi, 100) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endif
                 @endforeach
+
                 <!-- Berita 3 -->
                 <div class="col-md-6 mb-4">
                     <a href="{{ route('berita.bla') }}" class="text-decoration-none">

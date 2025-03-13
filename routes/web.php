@@ -27,6 +27,9 @@ Route::get('berita/pbwo', [BeritaController::class, 'pbwo'])->name('berita.pbwo'
 Route::get('berita/bla', [BeritaController::class, 'bla'])->name('berita.bla');
 Route::get('berita/blo', [BeritaController::class, 'blo'])->name('berita.blo');
 
+
+Route::patch('/beritas/{id}/approve', [BeritaController::class, 'approve'])->name('beritas.approve');
+Route::patch('/beritas/{id}/improve', [BeritaController::class, 'improve'])->name('beritas.improve');
 // Halaman Landing
 
 // Rute Autentikasi
