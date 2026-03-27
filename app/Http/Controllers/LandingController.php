@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
+    */
     public function index()
     {
-        return view('landing');
+        $abouts = about::all();
+        return view('landing', compact('abouts'));
     }
 
     public function admin()

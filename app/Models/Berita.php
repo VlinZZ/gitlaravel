@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Berita extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'judul', 'isi', 'gambar'
+
+    protected $fillable = ['judul', 'isi', 'gambar', 'status', 'improve_notes'];
+
+    // Menambahkan status default
+    protected $attributes = [
+        'status' => 'pending',
     ];
 }
+

@@ -1,52 +1,95 @@
+/* Mengatur latar belakang halaman */
 body {
-    background-color: #f8f9fa;
+    background-color: #e9ecef;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+/* Memposisikan form login */
 .goblok {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-
-.uwu {
-    text-align: left;
-}
-.anjay {
-    text-align: left;
 }
 
+/* Memperbaiki tampilan form */
 form {
     max-width: 400px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: grid;
 }
-input[type="email"], input[type="password"] {
+
+/* Menyesuaikan input field */
+input[type="text"], input[type="password"] {
     width: 90%;
-    padding: 10px;
-    margin: 15px;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
     border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding-left: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
+/* Efek hover dan fokus pada input */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #495057;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
 
+/* Tampilan tombol login */
 input[type="submit"] {
     width: 92%;
-    background-color: #000000;
+    background: linear-gradient(90deg, #ff7a18, #e52e71);
     color: white;
-    padding: 10px;
-    margin: 8px;
+    padding: 12px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
+/* Efek hover pada tombol login */
 input[type="submit"]:hover {
-    background-color: #404040;
+    background: linear-gradient(90deg, #e52e71, #ff7a18);
+    transform: scale(1.05);
+}
+
+/* Teks tambahan */
+small {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+small a {
+    color: #e52e71;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover pada link */
+small a:hover {
+    color: #ff7a18;
+    text-decoration: underline;
+}
+
+/* Tampilan heading */
+h1 {
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+/* Ikon */
+i {
+    margin-right: 10px;
+    color: #6c757d;
 }

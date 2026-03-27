@@ -83,14 +83,19 @@
 
 /* Main content area */
 .main-content {
-    margin-left: 280px;
+    margin-left: 280px; /* Tetap sesuai sidebar */
     padding: 20px;
     background-color: #f4f4f9;
-    min-height: 100vh;
+    min-height: 100vh; /* Pastikan tinggi area minimal setinggi layar */
     overflow-x: hidden;
-    position: relative; /* Pastikan berada dalam alur dokumen */
-    z-index: 1; /* Pastikan tidak menimpa sidebar */
+    position: relative;
+    z-index: 1;
+
+    /* Tambahkan aturan ini */
+    width: calc(100% - 280px); /* Pastikan konten mengisi sisa layar */
+    box-sizing: border-box; /* Termasuk padding dalam lebar */
 }
+
 
 
 /* Konten tambahan untuk tes */
